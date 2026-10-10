@@ -1,0 +1,346 @@
+:root{font-family:Inter,Segoe UI,Arial,sans-serif;color:#152238;background:#f2f5fa;--ancho-etiqueta:100mm;--alto-etiqueta:70mm}*{box-sizing:border-box}body{margin:0}.contenedor{max-width:1100px;margin:45px auto;padding:0 22px}.encabezado{display:flex;align-items:center;gap:16px;margin-bottom:30px}.logo{width:60px;height:60px;background:#173965;border-radius:17px;color:white;display:grid;place-items:center;font-size:32px}.encabezado h1{font-size:29px;margin:4px 0}.encabezado p,.secundario{color:#66758a;margin:5px 0;font-size:14px}small,.eyebrow{color:#47759f;letter-spacing:2px;font-size:10px;font-weight:800}.estado{margin-left:auto;background:#e7f6ee;color:#207e50;padding:9px 13px;border-radius:99px;font-size:12px;font-weight:700}.columnas{display:grid;grid-template-columns:1fr 1fr;gap:22px}.tarjeta{background:white;border:1px solid #e3e9f1;border-radius:20px;padding:28px;box-shadow:0 10px 35px #1522380a}.seccion-titulo{display:flex;align-items:center;gap:10px;margin-bottom:24px}.seccion-titulo h2{font-size:18px;margin:0}.paso{background:#eaf1fb;color:#22598e;padding:10px;border-radius:11px;font-size:12px;font-weight:800}label{font-weight:650;font-size:13px;display:block;margin:15px 0 7px}input,select{width:100%;border:1px solid #d5dfeb;border-radius:10px;padding:12px;font-size:15px;color:#253957;background:#fbfcfe}input:focus,select:focus{outline:2px solid #93bde8}.fila{display:grid;grid-template-columns:1fr 1fr;gap:15px}.oculto{display:none}.tamano{background:#f6f8fc;border-radius:12px;padding:14px;margin-top:23px}.tamano h3{font-size:13px;margin:0}.tamano p,.nota{font-size:12px;color:#7a8797;line-height:1.6}.primario,button{width:100%;cursor:pointer;background:#173965;border:0;color:white;font-weight:700;border-radius:11px;padding:15px;margin-top:20px;font-size:14px}button:disabled{background:#aeb9c7;cursor:not-allowed}.alternativo{background:#e8eef7;color:#244669}.vista .muestra{margin-top:33px;aspect-ratio:10/7;border:2px solid #d7e1ec;background:#fafbfd;border-radius:10px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;text-align:center;padding:15px}.muestra strong{font-size:clamp(22px,3vw,33px)}.muestra span:last-child{font-size:17px;font-weight:700}.regla{height:2px;width:80%;background:#23364d}.resumen{display:flex;justify-content:space-between;margin:24px 0 5px;border-top:1px solid #e4e9f2;padding-top:18px;color:#64738a}.resumen strong{color:#1b3d62}.acciones{display:flex;gap:12px}.acciones button{margin-top:14px}.nota{margin-top:22px}.error{color:#b42318;background:#fff1f0;padding:12px;border-radius:8px}#area-impresion{display:none}@media(max-width:740px){.columnas{grid-template-columns:1fr}.encabezado h1{font-size:23px}.estado{display:none}}
+@media print{
+  @page{size:var(--ancho-etiqueta) var(--alto-etiqueta);margin:0}
+  html,body{padding:0!important;margin:0!important;background:white!important}
+  .contenedor{display:none!important}
+  #area-impresion{display:block!important}
+  .etiqueta-print{width:var(--ancho-etiqueta);height:var(--alto-etiqueta);margin:0;padding:4mm;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5mm;border:0;break-after:page;page-break-after:always;overflow:hidden;text-align:center;color:#000;background:white}
+  .etiqueta-print:last-child{break-after:auto;page-break-after:auto}
+  .etiqueta-print strong{font:900 24pt Arial,sans-serif;line-height:1.05}
+  .etiqueta-print span{font:700 15pt Arial,sans-serif}
+}
+
+/* FONDO GENERAL */
+body {
+    min-height: 100vh;
+    margin: 0;
+    background:
+        linear-gradient(
+            rgba(10, 25, 45, 0.35),
+            rgba(10, 25, 45, 0.35)
+        ),
+        url("/static/Fondo1.png");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* RECUADRO BLANCO PRINCIPAL */
+.contenedor {
+    
+  width: 75%;
+    max-width: 1000px;
+    margin: 35px auto;
+    padding: 25px;
+
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+    box-sizing: border-box;
+}
+
+/* MANTENER LA IMPRESIÓN SIN FONDO */
+@media print {
+    .contenedor {
+        display: none !important;
+    }
+
+    body {
+        background: white !important;
+    }
+}
+
+/* ADAPTACIÓN A PANTALLAS PEQUEÑAS */
+@media (max-width: 740px) {
+    .contenedor {
+        margin: 15px;
+        padding: 18px;
+    }
+}
+
+
+/* REDUCIR ALTURA DEL RECUADRO BLANCO */
+
+.contenedor {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+/* ENCABEZADO MÁS COMPACTO */
+.encabezado {
+    margin-bottom: 8px;
+    padding-bottom: 8px;
+}
+
+.encabezado h1 {
+    font-size: 20px;
+    margin: 2px 0;
+}
+
+.encabezado p {
+    margin: 0;
+    font-size: 12px;
+}
+
+/* REDUCIR ALTURA DE LAS TARJETAS */
+.tarjeta {
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+/* REDUCIR ESPACIOS ENTRE CAMPOS */
+.grupo {
+    margin-bottom: 5px;
+}
+
+label {
+    margin-bottom: 3px;
+}
+
+input,
+select {
+    min-height: 32px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-bottom: 6px;
+}
+
+/* TÍTULOS MÁS COMPACTOS */
+.seccion-titulo {
+    margin-bottom: 8px;
+}
+
+.seccion-titulo h2 {
+    font-size: 15px;
+}
+
+/* VISTA PREVIA MÁS BAJA */
+.muestra {
+    min-height: 80px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+/* BOTONES MÁS BAJOS */
+button {
+    min-height: 32px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+
+/* REDUCIR ESPACIOS INFERIORES */
+.resumen {
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.nota,
+.secundario {
+    margin-top: 6px;
+    margin-bottom: 6px;
+    line-height: 1.3;
+}
+
+
+/* COMPACTAR ALTURA SIN CAMBIAR EL ANCHO */
+
+.contenedor {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    min-height: auto;
+    height: auto;
+}
+
+/* Evitar que las tarjetas se estiren */
+.columnas {
+    align-items: start;
+    gap: 20px;
+}
+
+.tarjeta {
+    min-height: 0;
+    height: auto;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+/* Encabezado */
+.encabezado {
+    margin-bottom: 10px;
+    padding-bottom: 8px;
+}
+
+.encabezado h1 {
+    margin: 2px 0;
+    font-size: 20px;
+}
+
+/* Campos de impresión */
+.grupo {
+    margin-bottom: 5px;
+}
+
+label {
+    margin-bottom: 3px;
+}
+
+input,
+select {
+    padding-top: 6px;
+    padding-bottom: 6px;
+    margin-bottom: 8px;
+}
+
+/* Vista previa más pequeña */
+.muestra {
+    min-height: 130px;
+    height: auto;
+    padding: 15px;
+}
+
+.muestra strong {
+    font-size: 27px;
+}
+
+/* Botones */
+button {
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+/* Reducir espacios */
+.seccion-titulo {
+    margin-bottom: 8px;
+}
+
+.secundario {
+    margin: 4px 0 10px;
+}
+
+.resumen {
+    margin: 10px 0;
+}
+
+.nota {
+    margin-top: 8px;
+    font-size: 11px;
+}
+
+/* No alterar la impresión térmica */
+@media print {
+    .contenedor {
+        display: none !important;
+    }
+}
+
+
+/* COMPACTAR ALTURA REAL DE LA INTERFAZ */
+
+.contenedor {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+/* Evitar tarjetas estiradas */
+.columnas {
+    align-items: start;
+}
+
+.tarjeta {
+    padding: 14px 22px;
+    height: auto;
+}
+
+/* Encabezado compacto */
+.encabezado {
+    margin-bottom: 10px;
+}
+
+.logo {
+    width: 45px;
+    height: 45px;
+}
+
+.encabezado h1 {
+    font-size: 21px;
+}
+
+/* Espaciado de formularios */
+.seccion-titulo {
+    margin-bottom: 10px;
+}
+
+label {
+    margin: 8px 0 4px;
+}
+
+input,
+select {
+    padding: 7px 10px;
+}
+
+.primario,
+button {
+    margin-top: 10px;
+    padding: 9px 12px;
+}
+
+/* AQUÍ ESTABA EL PROBLEMA PRINCIPAL */
+.vista .muestra {
+    aspect-ratio: auto !important;
+    height: 120px !important;
+    min-height: 0 !important;
+    margin-top: 12px;
+    gap: 6px;
+    padding: 10px;
+}
+
+.vista .muestra strong {
+    font-size: 25px;
+}
+
+.vista .muestra span:last-child {
+    font-size: 13px;
+}
+
+/* Parte inferior */
+.resumen {
+    margin: 10px 0 5px;
+    padding-top: 10px;
+}
+
+.acciones button {
+    margin-top: 6px;
+}
+
+.nota {
+    margin-top: 10px;
+    line-height: 1.3;
+}
+
+
+/* CENTRAR LA INTERFAZ EN LA PANTALLA */
+
+@media screen {
+    body {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .contenedor {
+        margin: 20px auto;
+        width: 75%;
+        max-width: 1000px;
+    }
+}

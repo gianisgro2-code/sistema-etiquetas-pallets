@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Etiquetas de pallets | Producción</title>
+  <link rel="stylesheet" href="/static/estilos.css">
+</head>
+<body>
+  <main class="contenedor">
+    <header class="encabezado"><div class="logo">▣</div><div><small>SISTEMA LOCAL DE PRODUCCIÓN</small><h1>Etiquetas de pallets</h1><p>Generación e impresión de identificadores</p></div><span class="estado">● Sistema de Etiquetado</span></header>
+    <div class="columnas">
+      <section class="tarjeta">
+        <div class="seccion-titulo"><span class="paso">01</span><h2>Configurar impresión</h2></div>
+        <form id="formulario">
+          <label for="modo">Modalidad</label>
+          <select id="modo"><option value="secuencia">Secuencia desde el pallet 1</option><option value="unidad">Pallet individual</option><option value="rango">Rango de pallets</option></select>
+          <div id="grupo-secuencia" class="grupo"><label for="cantidad">Cantidad de etiquetas</label><input id="cantidad" type="number" min="1" max="500" value="10"></div>
+          <div id="grupo-unidad" class="grupo oculto"><label for="unidad">Número de pallet</label><input id="unidad" type="number" min="1" value="25"></div>
+          <div id="grupo-rango" class="grupo oculto"><div class="fila"><div><label for="inicio">Pallet inicial</label><input id="inicio" type="number" min="1" value="1"></div><div><label for="fin">Pallet final</label><input id="fin" type="number" min="1" value="10"></div></div></div>
+          <label for="codigo">Últimos 4 dígitos del código de material</label><input id="codigo" type="text" maxlength="4" inputmode="numeric" placeholder="Ej. 1234" value="1234" pattern="[0-9]{4}" required>
+          <input type="hidden" id="ancho" value="100">
+          <input type="hidden" id="alto" value="70">
+          <p id="error" class="error" role="alert" hidden></p>
+          <button class="primario" type="submit">Generar etiquetas →</button>
+        </form>
+      </section>
+      <section class="tarjeta vista">
+        <div class="seccion-titulo"><span class="paso">02</span><h2>Vista previa</h2></div>
+        <p class="secundario">Revisá los datos antes de imprimir.</p>
+        <div id="vista-previa" class="muestra"><span class="eyebrow">IDENTIFICACIÓN DE PRODUCCIÓN</span><strong>PALLET N° 1</strong><div class="regla"></div><span>COD. MATERIAL: 1234</span></div>
+        <div class="resumen"><span>Etiquetas generadas</span><strong id="total">0</strong></div>
+        <div class="acciones"><button id="imprimir" type="button" disabled>🖨 Imprimir etiquetas</button><button id="ver-todas" class="alternativo" type="button" disabled>Ver todas</button></div>
+        
+      </section>
+    </div>
+  </main>
+  <div id="area-impresion" aria-hidden="true"></div>
+  <script src="/static/app.js"></script>
+</body>
+</html>

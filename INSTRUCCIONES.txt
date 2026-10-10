@@ -1,0 +1,25 @@
+SISTEMA DE ETIQUETAS DE PALLETS - VERSIÓN 0.1
+
+1) Instalá Python 3.11 o superior si no lo tenés.
+2) Abrí esta carpeta con Visual Studio Code.
+3) Abrí una terminal en VS Code y ejecutá:
+       py -m pip install -r requirements.txt
+4) Iniciá el servidor local:
+       py app.py
+5) En Chrome o Edge abrí:
+       http://127.0.0.1:5000
+6) Elegí secuencia, unidad o rango, escribí 4 dígitos del material y generá.
+7) Revisá la vista previa. Para imprimir, seleccioná la impresora de Windows
+   "SATO WS408 Etiquetas" y el tamaño de papel apropiado.
+
+IMPORTANTE:
+- Todavía no se sabe el tamaño real de la etiqueta; 100 x 70 mm es PROVISORIO.
+- El diseño exacto de etiqueta se confirmará con una muestra impresa original.
+- El sistema NO imprime automáticamente ni controla la impresora directamente.
+- Probá con UNA etiqueta y verificá escala 100%, márgenes, orientación y tamaño.
+- No ejecutar trabajos grandes hasta validar el formato físicamente.
+- No importa ni modifica el Excel original.
+- Los códigos de cuatro dígitos conservan los ceros iniciales.
+- Máximo 500 etiquetas por lote como protección contra errores.
+- Se ejecuta en tu computadora, sin compartir el servidor por la red.
+- Si Windows dice "Sin conexión", revisá conexión y controlador antes de imprimir.
